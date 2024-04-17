@@ -1,0 +1,171 @@
+<Scene>:
+    # 背景颜色
+    canvas.before:
+        Color:
+            rgb:.9,.8,.5
+        Rectangle:
+            size:self.size
+            pos:self.pos
+#            source:"./pic/大圣.jpg"
+<B>:
+    canvas.before:
+        Color:
+            rgb:.9,.8,.5
+        Rectangle:
+            pos: self.pos
+            size: self.size
+#            source:"./pic/大圣.jpg"
+    FloatLayout:
+        size_hint:None,None
+
+        # 上下左右按钮
+        Button:
+            border:0,0,0,0
+            id: up_btn
+            background_normal: './pic/up.png'
+            size_hint:.5,.5
+            pos:320,100
+            background_down:'./pic/down.png'
+            on_press:root.on_b_button_press("up")
+
+        Button:
+            border:0,0,0,0
+            id: down_btn
+            background_normal: './pic/down.png'
+            size_hint:.5,.5
+            pos:320,10
+            background_down:'./pic/up.png'
+            on_press:root.on_b_button_press("down")
+
+        Button:
+            border:0,0,0,0
+            id: left_btn
+            background_normal: './pic/left.png'
+            size_hint:.5,.5
+            pos:270,55
+            background_down:'./pic/right.png'
+            on_press:root.on_b_button_press("left")
+
+        Button:
+            border:0,0,0,0
+            id: right_btn
+            background_normal: './pic/right.png'
+            size_hint:.5,.5
+            pos:370,55
+            background_down:'./pic/left.png'
+            on_press:root.on_b_button_press("right")
+
+        # 旋转
+        Button:
+            border:0,0,0,0
+            id: right_btn
+            background_normal: './pic/旋转90.png'
+            size_hint:.5,.5
+            pos:370,170
+            background_down:'./pic/旋转.png'
+            on_press:root.on_b_button_press("Rotate")
+
+        # 继续暂停
+        Button:
+            border:0,0,0,0
+            id: ing_btn
+            background_normal: './pic/进行中.png'
+            size_hint:.5,.5
+            pos:370,220
+#            on_press:root.on_b_button_press("ing")
+            on_press:root.on_b_button_press("ing")
+        # 控制速度的滑块
+        Slider:
+            orientation:'vertical'
+            id:slider
+            size_hint:None,None
+            size:50,170
+            min:0.1
+            max:1
+            step:0.01
+            pos:200,0
+            value:0.5
+            value_track:True
+            value_track_color:[1,0,0,1]
+            on_touch_move:root.on_b_button_press(self.value)
+
+        Image:
+            source:'./pic/历史最高.png'
+            size_hint:.35,.35
+            pos:220,720
+
+        Image:
+            source:'./pic/当前得分.png'
+            size_hint:.35,.35
+            pos:220,680
+
+#        Label:
+#            text:"历史最高:"
+#            pos:270,690
+#            font_size:26
+#            font_name : './pic/msyh.ttf'
+#            halign:'left'
+#            color:1,0,0
+#
+#        Label:
+#            text:"当前得分:"
+#            pos:270,645
+#            font_size:26
+#            font_name : './pic/msyh.ttf'
+#            halign:'left'
+#            color:1,0,0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#        Label:   #添加一个标签,[ref]标记的内容是可以做为触发事件的标记
+#            id:HISTORY
+#            text:'HISTORY:0'
+#            font_size:30    #字体大小
+#            bold:True     #字体加粗
+#            color:.9,.2,.1,1   #字体颜色
+#            pos:330,750
+#
+#        Label:   #添加一个标签,[ref]标记的内容是可以做为触发事件的标记
+#            id:SCORE
+#            text:'SCORE:0'
+#            font_size:30    #字体大小
+#            bold:True     #字体加粗
+#            color:.9,.2,.1,1   #字体颜色
+#            pos:344,715
+
+
+
+
+
+
+
+
+
+
+
+
+
+
